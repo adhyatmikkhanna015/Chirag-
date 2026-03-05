@@ -1,241 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>For Chirag</title>
+<!-- Polaroid Gallery Section -->
+<div class="polaroid-gallery">
+    <h2>Polaroid Gallery</h2>
+    <div class="polaroid">
+        <img src="images/image1.jpg" alt="Image 1">
+    </div>
+    <div class="polaroid">
+        <img src="images/image2.jpg" alt="Image 2">
+    </div>
+    <div class="polaroid">
+        <img src="images/image3.jpg" alt="Image 3">
+    </div>
+    <div class="polaroid">
+        <img src="images/image4.jpg" alt="Image 4">
+    </div>
+</div>
 
 <style>
+    .polaroid-gallery {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .polaroid {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border: 10px solid white;
+        background-color: #f5f5f5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: rotate(-1deg);
+        transition: transform 0.2s;
+    }
 
-body{
-margin:0;
-font-family: Georgia, serif;
-background: linear-gradient(180deg,#f6f0ff,#ffeef6);
-text-align:center;
-color:#333;
-overflow-x:hidden;
-}
+    .polaroid img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 
-.container{
-max-width:700px;
-margin:auto;
-padding:60px 25px;
-}
-
-h1{
-font-size:40px;
-margin-bottom:10px;
-}
-
-.subtitle{
-opacity:0.7;
-font-style:italic;
-margin-bottom:60px;
-}
-
-.section{
-margin:50px 0;
-font-size:19px;
-line-height:1.7;
-}
-
-.highlight{
-font-size:24px;
-font-weight:bold;
-margin:50px 0;
-}
-
-.counter{
-font-size:42px;
-font-weight:bold;
-margin:40px 0;
-}
-
-button{
-background:#c9a7ff;
-border:none;
-padding:14px 28px;
-border-radius:25px;
-font-size:16px;
-cursor:pointer;
-color:white;
-}
-
-button:hover{
-opacity:0.85;
-}
-
-.hidden{
-display:none;
-margin-top:40px;
-font-size:19px;
-line-height:1.7;
-}
-
-.footer{
-margin-top:70px;
-opacity:0.7;
-}
-
-/* floating hearts */
-
-.heart{
-position:fixed;
-bottom:-10px;
-font-size:18px;
-animation:float 8s linear infinite;
-opacity:0.6;
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-110vh);}
-}
-
+    .polaroid:hover {
+        transform: rotate(0deg);
+    }
 </style>
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>For Chirag</h1>
-
-<div class="subtitle">
-Some journeys are written quietly before the world notices them.
-</div>
-
-<div class="section">
-When I first started following your journey,
-you had <b>2036 followers</b>.
-</div>
-
-<div class="section">
-Today, that number has crossed something much bigger.
-</div>
-
-<div class="counter" id="counter">
-2036
-</div>
-
-<div class="section">
-But numbers rarely tell the real story.
-</div>
-
-<div class="section">
-The real story is the uncertainty,  
-the sacrifices,  
-the moments that felt embarrassing or unfair,  
-and the situations where even friends didn't understand.
-</div>
-
-<div class="section">
-And still, you stayed.
-You kept working.
-You kept showing up.
-</div>
-
-<div class="highlight">
-And slowly… things began to fall into place.
-</div>
-
-<div class="section">
-Confusion turned into clarity.  
-Struggles turned into strength.  
-And the journey that once looked uncertain  
-now looks inevitable.
-</div>
-
-<div class="section">
-Because persistence always writes its own ending.
-</div>
-
-<button onclick="revealMessage()">Open this message</button>
-
-<div id="message" class="hidden">
-
-<div class="highlight">
-2036 → 20,000
-</div>
-
-<div class="section">
-Not luck.  
-Not coincidence.  
-Just courage and consistency.
-</div>
-
-<div class="section">
-And somewhere in this journey,
-we found each other.
-</div>
-
-<div class="highlight">
-7 months.
-</div>
-
-<div class="section">
-Seven months of watching the growth,  
-the struggles,  
-and the strength it takes to keep going.
-</div>
-
-<div class="section">
-I'm quietly proud of you.
-</div>
-
-<div class="footer">
-This is only the beginning ♡
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-/* follower counter animation */
-
-let count = 2036
-let target = 20000
-let counter = document.getElementById("counter")
-
-let interval = setInterval(function(){
-
-count += 120
-
-if(count >= target){
-count = target
-clearInterval(interval)
-}
-
-counter.innerText = count.toLocaleString()
-
-},40)
-
-/* reveal message */
-
-function revealMessage(){
-document.getElementById("message").style.display="block"
-}
-
-/* floating hearts */
-
-function createHeart(){
-
-let heart = document.createElement("div")
-heart.className="heart"
-heart.innerHTML="♡"
-heart.style.left=Math.random()*100+"vw"
-heart.style.fontSize=(12+Math.random()*15)+"px"
-
-document.body.appendChild(heart)
-
-setTimeout(()=>heart.remove(),8000)
-
-}
-
-setInterval(createHeart,1200)
-
-</script>
-
-</body>
-</html>
